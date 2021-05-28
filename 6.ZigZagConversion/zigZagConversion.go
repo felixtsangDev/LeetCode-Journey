@@ -18,10 +18,10 @@ func convert(s string, numRows int) string {
 		count := 0
 		for i+n < len(s) {
 			if count < column {
-				fmt.Println("Append: ", string(s[i+n]), i+n)
+				// fmt.Println("Append: ", string(s[i+n]), i+n)
 				result = append(result, s[i+n])
 				if i != 0 && i != numRows-1 && (i+n)+((numRows-1-i)*2) < len(s) {
-					fmt.Println("Append: ", string(s[(i+n)+((numRows-1-i)*2)]), (i+n)+((numRows-1-i)*2))
+					// fmt.Println("Append: ", string(s[(i+n)+((numRows-1-i)*2)]), (i+n)+((numRows-1-i)*2))
 					result = append(result, s[i+n+((numRows-1-i)*2)])
 				}
 			}
@@ -30,6 +30,7 @@ func convert(s string, numRows int) string {
 		}
 
 	}
+
 	return string(result)
 }
 
