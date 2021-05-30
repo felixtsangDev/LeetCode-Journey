@@ -18,26 +18,25 @@ func myAtoi(s string) int {
 	isPositive := true
 	resultArr := []int{}
 	for i := 0; i < len(s); i++ {
-		charInt := int(s[i])
-		if charInt >= 48 && charInt <= 57 {
+		if s[i] >= '0' && s[i] <= '9' {
 			if !start {
 				start = true
 			}
-			if charInt == 48 && len(resultArr) == 0 {
+			if s[i] == '0' && len(resultArr) == 0 {
 				continue
 			}
-			resultArr = append(resultArr, charInt-48)
+			resultArr = append(resultArr, int(s[i])-48)
 			continue
 		}
-		if charInt == 45 || charInt == 32 || charInt == 43 {
+		if s[i] == '-' || s[i] == ' ' || s[i] == '+' {
 			if start {
 				break
 			}
-			if charInt == 45 {
+			if s[i] == '-' {
 				isPositive = false
 				start = true
 				continue
-			} else if charInt == 43 {
+			} else if s[i] == '+' {
 				start = true
 				continue
 			} else {
@@ -72,5 +71,5 @@ func myAtoi(s string) int {
 }
 
 func main() {
-	fmt.Println(myAtoi("00-1"))
+	fmt.Println(myAtoi("2000000"))
 }
