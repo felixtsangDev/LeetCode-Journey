@@ -12,7 +12,7 @@
 
 
 def isPalindrome(x: int) -> bool:
-    return True if (x > 0 and str(x) == str(x)[::-1]) else False
+    return True if (x >= 0 and str(x) == str(x)[::-1]) else False
 
 
 print(isPalindrome(96969))
